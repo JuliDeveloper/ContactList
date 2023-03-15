@@ -1,4 +1,5 @@
 import UIKit
+import Contacts
 
 final class SplashScreenViewController: UIViewController {
     
@@ -28,24 +29,15 @@ final class SplashScreenViewController: UIViewController {
     
     private let customAlert = CustomAlert()
     
+    private var contacts: [CNContact] = []
+    private let contactsManager = ContactsManager.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         setupConstraints()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-            guard let self = self else { return }
-            self.customAlert.showAlert(
-                title: "Разрешить приложению «ContactsList» доступ к контактам?",
-                view: self.view) {
-                    print("Доступ разрешен")
-                    let listVC = ContactListTableView()
-                    self.present(listVC, animated: true)
-                } cancelHandler: {
-                    print("Доступ запрещен")
-                    self.settingsButton.isHidden = false
-                }
-        }
+        fetchContacts()
     }
     
     private func configureView() {
@@ -82,6 +74,41 @@ final class SplashScreenViewController: UIViewController {
                 constant: -58
             )
         ])
+    }
+    
+    private func fetchContacts() {
+        contactsManager.requestContactsAccess { [weak self] access in
+            guard let self = self else { return }
+            if access {
+                self.loadContact()
+                print("Доступ разрешен")
+            } else {
+                print("Доступ запрещен")
+                DispatchQueue.main.async {
+                    self.settingsButton.isHidden = false
+                }
+            }
+        }
+    }
+    
+    private func loadContact() {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let self = self else { return }
+            self.contactsManager.fetchContacts { result in
+                switch result {
+                case .success(let contacts):
+                    DispatchQueue.main.async {
+                        self.contacts = contacts
+                        let listVC = ContactListTableView()
+                        listVC.modalPresentationStyle = .fullScreen
+                        listVC.contacts = self.contacts
+                        self.present(listVC, animated: true)
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     }
     
     @objc private func openSettings() {
