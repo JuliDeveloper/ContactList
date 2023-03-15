@@ -66,10 +66,22 @@ final class CustomHeaderTableView: UIView {
         addSubview(headerStack)
         
         NSLayoutConstraint.activate([
-            headerStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            headerStack.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            headerStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            headerStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -31)
+            headerStack.leadingAnchor.constraint(
+                equalTo: leadingAnchor,
+                constant: 16
+            ),
+            headerStack.topAnchor.constraint(
+                equalTo: topAnchor,
+                constant: 0
+            ),
+            headerStack.trailingAnchor.constraint(
+                equalTo: trailingAnchor,
+                constant: -16
+            ),
+            headerStack.bottomAnchor.constraint(
+                equalTo: bottomAnchor,
+                constant: -31
+            )
         ])
     }
     
