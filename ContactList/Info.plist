@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSContactsUsageDescription</key>
-	<string>Permission from the user to import contacts into the application</string>
+	<string>Разрешить приложению «Contacts» доступ к контактам?</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
