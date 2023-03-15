@@ -1,6 +1,11 @@
 import UIKit
 import Contacts
 
+protocol SplashScreenViewControllerDelegate: AnyObject {
+    func updateIsHiddenButton()
+    func updateUI(with contacts: [CNContact])
+}
+
 final class SplashScreenViewController: UIViewController {
     
     private let logoImageView: UIImageView = {
@@ -26,18 +31,18 @@ final class SplashScreenViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
-    private let customAlert = CustomAlert()
-    
+        
+    lazy var presenter: SplashScreenPresenter = {
+        SplashScreenPresenter(delegate: self)
+    }()
     private var contacts: [CNContact] = []
-    private let contactsManager = ContactsManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         setupConstraints()
         
-        fetchContacts()
+        presenter.viewDidLoad()
     }
     
     private func configureView() {
@@ -76,41 +81,6 @@ final class SplashScreenViewController: UIViewController {
         ])
     }
     
-    private func fetchContacts() {
-        contactsManager.requestContactsAccess { [weak self] access in
-            guard let self = self else { return }
-            if access {
-                self.loadContact()
-                print("Доступ разрешен")
-            } else {
-                print("Доступ запрещен")
-                DispatchQueue.main.async {
-                    self.settingsButton.isHidden = false
-                }
-            }
-        }
-    }
-    
-    private func loadContact() {
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            guard let self = self else { return }
-            self.contactsManager.fetchContacts { result in
-                switch result {
-                case .success(let contacts):
-                    DispatchQueue.main.async {
-                        self.contacts = contacts
-                        let listVC = ContactListTableView()
-                        listVC.modalPresentationStyle = .fullScreen
-                        listVC.contacts = self.contacts
-                        self.present(listVC, animated: true)
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        }
-    }
-    
     @objc private func openSettings() {
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
             return
@@ -121,5 +91,19 @@ final class SplashScreenViewController: UIViewController {
                 print("Settings opened: \(success)")
             })
         }
+    }
+}
+
+extension SplashScreenViewController: SplashScreenViewControllerDelegate {
+    func updateIsHiddenButton() {
+        self.settingsButton.isHidden = false
+    }
+    
+    func updateUI(with contacts: [CNContact]) {
+        self.contacts = contacts
+        let listVC = ContactListTableView()
+        listVC.modalPresentationStyle = .fullScreen
+        listVC.contacts = self.contacts
+        self.present(listVC, animated: true)
     }
 }
