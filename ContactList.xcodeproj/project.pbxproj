@@ -66,20 +66,84 @@
 		255B088D29BE04AB00A599E3 /* ContactList */ = {
 			isa = PBXGroup;
 			children = (
-				255B088E29BE04AB00A599E3 /* AppDelegate.swift */,
-				255B089029BE04AB00A599E3 /* SceneDelegate.swift */,
-				255B08A229BE06D700A599E3 /* SplashScreenViewController.swift */,
-				255B08AA29BE445E00A599E3 /* ContactListTableView.swift */,
-				255B08AE29C2212A00A599E3 /* ContactCell.swift */,
-				255B08AC29C21E4800A599E3 /* ContactsManager.swift */,
-				255B08A829BE3A6100A599E3 /* CustomAlert.swift */,
-				255B08A629BE3A4500A599E3 /* Extension + UIView.swift */,
-				255B089729BE04AC00A599E3 /* Assets.xcassets */,
-				255B089929BE04AC00A599E3 /* LaunchScreen.storyboard */,
-				255B089C29BE04AC00A599E3 /* Info.plist */,
-				255B08A429BE113C00A599E3 /* Extension + UIColor.swift */,
+				255B08B129C2312100A599E3 /* Presentation */,
+				255B08B529C231E200A599E3 /* Service */,
+				255B08B629C2321800A599E3 /* Extensions */,
+				255B08B729C2323A00A599E3 /* Resourses */,
+				255B08B029C230FD00A599E3 /* App */,
 			);
 			path = ContactList;
+			sourceTree = "<group>";
+		};
+		255B08B029C230FD00A599E3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				255B088E29BE04AB00A599E3 /* AppDelegate.swift */,
+				255B089029BE04AB00A599E3 /* SceneDelegate.swift */,
+				255B089C29BE04AC00A599E3 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		255B08B129C2312100A599E3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				255B08B229C231AF00A599E3 /* SplashCreen */,
+				255B08B329C231BA00A599E3 /* ContactList */,
+				255B08B429C231CC00A599E3 /* LaunchScreen */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		255B08B229C231AF00A599E3 /* SplashCreen */ = {
+			isa = PBXGroup;
+			children = (
+				255B08A229BE06D700A599E3 /* SplashScreenViewController.swift */,
+			);
+			path = SplashCreen;
+			sourceTree = "<group>";
+		};
+		255B08B329C231BA00A599E3 /* ContactList */ = {
+			isa = PBXGroup;
+			children = (
+				255B08AA29BE445E00A599E3 /* ContactListTableView.swift */,
+				255B08AE29C2212A00A599E3 /* ContactCell.swift */,
+			);
+			path = ContactList;
+			sourceTree = "<group>";
+		};
+		255B08B429C231CC00A599E3 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				255B089929BE04AC00A599E3 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		255B08B529C231E200A599E3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				255B08AC29C21E4800A599E3 /* ContactsManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		255B08B629C2321800A599E3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				255B08A429BE113C00A599E3 /* Extension + UIColor.swift */,
+				255B08A629BE3A4500A599E3 /* Extension + UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		255B08B729C2323A00A599E3 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				255B08A829BE3A6100A599E3 /* CustomAlert.swift */,
+				255B089729BE04AC00A599E3 /* Assets.xcassets */,
+			);
+			path = Resourses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +364,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DWMGJ928Y5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ContactList/Info.plist;
+				INFOPLIST_FILE = ContactList/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Contacts;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -331,7 +395,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DWMGJ928Y5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ContactList/Info.plist;
+				INFOPLIST_FILE = ContactList/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Contacts;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
