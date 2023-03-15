@@ -19,6 +19,7 @@
 		255B08AD29C21E4800A599E3 /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08AC29C21E4800A599E3 /* ContactsManager.swift */; };
 		255B08AF29C2212A00A599E3 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08AE29C2212A00A599E3 /* ContactCell.swift */; };
 		255B08B929C2333100A599E3 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08B829C2333100A599E3 /* SplashScreenPresenter.swift */; };
+		255B08BC29C23F5C00A599E3 /* CustomHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08BB29C23F5C00A599E3 /* CustomHeaderTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		255B08AC29C21E4800A599E3 /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
 		255B08AE29C2212A00A599E3 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		255B08B829C2333100A599E3 /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
+		255B08BB29C23F5C00A599E3 /* CustomHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				255B08AA29BE445E00A599E3 /* ContactListTableView.swift */,
 				255B08AE29C2212A00A599E3 /* ContactCell.swift */,
+				255B08BB29C23F5C00A599E3 /* CustomHeaderTableView.swift */,
 			);
 			path = ContactList;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				255B08A929BE3A6100A599E3 /* CustomAlert.swift in Sources */,
 				255B08AB29BE445E00A599E3 /* ContactListTableView.swift in Sources */,
 				255B08A329BE06D700A599E3 /* SplashScreenViewController.swift in Sources */,
+				255B08BC29C23F5C00A599E3 /* CustomHeaderTableView.swift in Sources */,
 				255B089129BE04AB00A599E3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
