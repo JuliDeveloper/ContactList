@@ -16,6 +16,8 @@
 		255B08A729BE3A4500A599E3 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08A629BE3A4500A599E3 /* Extension + UIView.swift */; };
 		255B08A929BE3A6100A599E3 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08A829BE3A6100A599E3 /* CustomAlert.swift */; };
 		255B08AB29BE445E00A599E3 /* ContactListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08AA29BE445E00A599E3 /* ContactListTableView.swift */; };
+		255B08AD29C21E4800A599E3 /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08AC29C21E4800A599E3 /* ContactsManager.swift */; };
+		255B08AF29C2212A00A599E3 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08AE29C2212A00A599E3 /* ContactCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		255B08A629BE3A4500A599E3 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 		255B08A829BE3A6100A599E3 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		255B08AA29BE445E00A599E3 /* ContactListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTableView.swift; sourceTree = "<group>"; };
+		255B08AC29C21E4800A599E3 /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
+		255B08AE29C2212A00A599E3 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				255B089029BE04AB00A599E3 /* SceneDelegate.swift */,
 				255B08A229BE06D700A599E3 /* SplashScreenViewController.swift */,
 				255B08AA29BE445E00A599E3 /* ContactListTableView.swift */,
+				255B08AE29C2212A00A599E3 /* ContactCell.swift */,
+				255B08AC29C21E4800A599E3 /* ContactsManager.swift */,
 				255B08A829BE3A6100A599E3 /* CustomAlert.swift */,
 				255B08A629BE3A4500A599E3 /* Extension + UIView.swift */,
 				255B089729BE04AC00A599E3 /* Assets.xcassets */,
@@ -146,8 +152,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				255B08AF29C2212A00A599E3 /* ContactCell.swift in Sources */,
 				255B088F29BE04AB00A599E3 /* AppDelegate.swift in Sources */,
 				255B08A729BE3A4500A599E3 /* Extension + UIView.swift in Sources */,
+				255B08AD29C21E4800A599E3 /* ContactsManager.swift in Sources */,
 				255B08A529BE113C00A599E3 /* Extension + UIColor.swift in Sources */,
 				255B08A929BE3A6100A599E3 /* CustomAlert.swift in Sources */,
 				255B08AB29BE445E00A599E3 /* ContactListTableView.swift in Sources */,
