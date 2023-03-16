@@ -37,6 +37,7 @@ final class CustomHeaderTableView: UIView {
     }
     
     private func configureHeader() {
+        backgroundColor = .customBlack
         setupConstraints()
     }
     
