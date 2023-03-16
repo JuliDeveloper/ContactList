@@ -102,8 +102,9 @@ extension SplashScreenViewController: SplashScreenViewControllerDelegate {
     func updateUI(with contacts: [CNContact]) {
         self.contacts = contacts
         let listVC = ContactListTableView()
-        listVC.modalPresentationStyle = .fullScreen
+        let navVC = UINavigationController(rootViewController: listVC)
+        navVC.modalPresentationStyle = .fullScreen
         listVC.contacts = self.contacts
-        self.present(listVC, animated: true)
+        self.present(navVC, animated: true)
     }
 }
