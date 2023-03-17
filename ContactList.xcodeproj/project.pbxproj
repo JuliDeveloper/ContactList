@@ -20,6 +20,7 @@
 		255B08AF29C2212A00A599E3 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08AE29C2212A00A599E3 /* ContactCell.swift */; };
 		255B08B929C2333100A599E3 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08B829C2333100A599E3 /* SplashScreenPresenter.swift */; };
 		255B08BC29C23F5C00A599E3 /* CustomHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08BB29C23F5C00A599E3 /* CustomHeaderTableView.swift */; };
+		255B08C529C4BEDA00A599E3 /* Extension + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08C429C4BEDA00A599E3 /* Extension + UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		255B08AE29C2212A00A599E3 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		255B08B829C2333100A599E3 /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
 		255B08BB29C23F5C00A599E3 /* CustomHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderTableView.swift; sourceTree = "<group>"; };
+		255B08C429C4BEDA00A599E3 /* Extension + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		255B08B129C2312100A599E3 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				255B08C129C49E8200A599E3 /* Views */,
 				255B08B229C231AF00A599E3 /* SplashCreen */,
 				255B08B329C231BA00A599E3 /* ContactList */,
 				255B08B429C231CC00A599E3 /* LaunchScreen */,
@@ -112,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				255B08AA29BE445E00A599E3 /* ContactListTableView.swift */,
-				255B08AE29C2212A00A599E3 /* ContactCell.swift */,
 				255B08BB29C23F5C00A599E3 /* CustomHeaderTableView.swift */,
 			);
 			path = ContactList;
@@ -139,6 +141,7 @@
 			children = (
 				255B08A429BE113C00A599E3 /* Extension + UIColor.swift */,
 				255B08A629BE3A4500A599E3 /* Extension + UIView.swift */,
+				255B08C429C4BEDA00A599E3 /* Extension + UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -150,6 +153,14 @@
 				255B089729BE04AC00A599E3 /* Assets.xcassets */,
 			);
 			path = Resourses;
+			sourceTree = "<group>";
+		};
+		255B08C129C49E8200A599E3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				255B08AE29C2212A00A599E3 /* ContactCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				255B08AF29C2212A00A599E3 /* ContactCell.swift in Sources */,
+				255B08C529C4BEDA00A599E3 /* Extension + UIImageView.swift in Sources */,
 				255B088F29BE04AB00A599E3 /* AppDelegate.swift in Sources */,
 				255B08A729BE3A4500A599E3 /* Extension + UIView.swift in Sources */,
 				255B08AD29C21E4800A599E3 /* ContactsManager.swift in Sources */,

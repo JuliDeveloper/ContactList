@@ -37,8 +37,58 @@ final class ContactCell: UITableViewCell {
         return label
     }()
     
+    private let appStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.distribution = .fill
+        stack.spacing = -4
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+    
+    private let telegramImageView: UIImageView = {
+        let image = UIImageView()
+        image.configure(with: "telegram")
+        return image
+    }()
+    private let whatsAppImageView: UIImageView = {
+        let image = UIImageView()
+        image.configure(with: "whatsApp")
+        return image
+    }()
+    private let viberImageView: UIImageView = {
+        let image = UIImageView()
+        image.configure(with: "viber")
+        return image
+    }()
+    private let signalImageView: UIImageView = {
+        let image = UIImageView()
+        image.configure(with: "signal")
+        return image
+    }()
+    private let threemaImageView: UIImageView = {
+        let image = UIImageView()
+        image.configure(with: "threema")
+        return image
+    }()
+    private let phoneImageView: UIImageView = {
+        let image = UIImageView()
+        image.configure(with: "phone")
+        return image
+    }()
+    private let emailImageView: UIImageView = {
+        let image = UIImageView()
+        image.configure(with: "email")
+        return image
+    }()
+    
     func configCell(for cell: ContactCell, from contact: CNContact, with indexPath: IndexPath) {
         backgroundColor = .clear
+        selectionStyle = .none
+        
+        addElements()
+        setupPositionView()
+        configConstraints()
         
         if contact.thumbnailImageData != nil {
             contactPhoto.backgroundColor = .customDarkGray
@@ -56,16 +106,33 @@ final class ContactCell: UITableViewCell {
         } else {
             phoneLabel.text = ""
         }
-        
-        configConstraints()
     }
     
-    private func configConstraints() {
+    private func addElements() {
+        addSubview(mainView)
+        
         mainView.addSubview(contactPhoto)
         mainView.addSubview(nameLabel)
         mainView.addSubview(phoneLabel)
-        addSubview(mainView)
+        mainView.addSubview(appStackView)
         
+        appStackView.addArrangedSubview(telegramImageView)
+        appStackView.addArrangedSubview(whatsAppImageView)
+        appStackView.addArrangedSubview(viberImageView)
+        appStackView.addArrangedSubview(signalImageView)
+        appStackView.addArrangedSubview(threemaImageView)
+        appStackView.addArrangedSubview(phoneImageView)
+        appStackView.addArrangedSubview(emailImageView)
+    }
+    
+    private func setupPositionView() {
+        let countStack = appStackView.arrangedSubviews.count
+        for (index, view) in appStackView.arrangedSubviews.enumerated() {
+            view.layer.zPosition = CGFloat(countStack - index)
+        }
+    }
+    
+    private func configConstraints() {
         NSLayoutConstraint.activate([
             mainView.topAnchor.constraint(
                 equalTo: topAnchor
@@ -112,12 +179,18 @@ final class ContactCell: UITableViewCell {
             ),
             phoneLabel.topAnchor.constraint(
                 equalTo: nameLabel.bottomAnchor,
-                constant: 12
+                constant: 6
             ),
             phoneLabel.trailingAnchor.constraint(
                 equalTo: nameLabel.trailingAnchor
+            ),
+            
+            appStackView.bottomAnchor.constraint(
+                equalTo: contactPhoto.bottomAnchor
+            ),
+            appStackView.leadingAnchor.constraint(
+                equalTo: phoneLabel.leadingAnchor
             )
         ])
-        
     }
 }
