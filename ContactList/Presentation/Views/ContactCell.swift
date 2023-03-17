@@ -106,11 +106,38 @@ final class ContactCell: UITableViewCell {
         
         if contact.phoneNumbers.first?.value != nil {
             guard let contactNumber = contact.phoneNumbers.first?.value else { return }
-            phoneLabel.text = "\(contactNumber.stringValue)"
+            let number = contactNumber.stringValue
+            if  number.count == 12 {
+                guard let formattedNumber = formatPhoneNumber(number) else { return }
+                phoneLabel.text = "\(formattedNumber)"
+                print(formattedNumber)
+            } else {
+                phoneLabel.text = "\(contactNumber.stringValue)"
+            }
         } else {
             phoneLabel.text = ""
         }
     }
+    
+    private func formatPhoneNumber(_ phoneNumber: String) -> String? {
+        let formattedNumber: String
+        
+        let digits = phoneNumber.filter { $0.isNumber }
+
+        if digits.count != 11 {
+            print("Неверная длина номера телефона")
+            return nil
+        }
+
+        guard let countryPart = digits.first else { return "" }
+        let firstPart = digits.dropFirst().prefix(3)
+        let secondPart = digits.dropFirst(4).prefix(3)
+        let thirdPart = digits.dropFirst(7)
+
+        formattedNumber = "+\(countryPart) (\(firstPart)) \(secondPart)-\(thirdPart)"
+        return formattedNumber
+    }
+
     
     private func addElements() {
         addSubview(mainView)
