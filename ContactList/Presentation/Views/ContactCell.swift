@@ -98,7 +98,11 @@ final class ContactCell: UITableViewCell {
             contactPhoto.image = UIImage(named: "theatermasks.fill")
         }
         
-        nameLabel.text = "\(contact.givenName) \(contact.familyName)"
+        if !contact.givenName.isEmpty || !contact.familyName.isEmpty {
+            nameLabel.text = "\(contact.givenName) \(contact.familyName)"
+        } else {
+            nameLabel.text = ""
+        }
         
         if contact.phoneNumbers.first?.value != nil {
             guard let contactNumber = contact.phoneNumbers.first?.value else { return }
