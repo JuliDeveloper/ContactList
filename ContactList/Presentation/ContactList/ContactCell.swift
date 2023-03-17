@@ -38,7 +38,6 @@ final class ContactCell: UITableViewCell {
     }()
     
     func configCell(for cell: ContactCell, from contact: CNContact, with indexPath: IndexPath) {
-        
         backgroundColor = .clear
         
         if contact.thumbnailImageData != nil {
@@ -51,8 +50,9 @@ final class ContactCell: UITableViewCell {
         
         nameLabel.text = "\(contact.givenName) \(contact.familyName)"
         
-        if contact.phoneNumbers.first?.value.stringValue != nil {
-            phoneLabel.text = "\(contact.phoneNumbers.first?.value.stringValue ?? "")"
+        if contact.phoneNumbers.first?.value != nil {
+            guard let contactNumber = contact.phoneNumbers.first?.value else { return }
+            phoneLabel.text = "\(contactNumber.stringValue)"
         } else {
             phoneLabel.text = ""
         }
@@ -61,25 +61,39 @@ final class ContactCell: UITableViewCell {
     }
     
     private func configConstraints() {
-        
         mainView.addSubview(contactPhoto)
         mainView.addSubview(nameLabel)
         mainView.addSubview(phoneLabel)
         addSubview(mainView)
         
         NSLayoutConstraint.activate([
-            mainView.topAnchor.constraint(equalTo: topAnchor),
-            mainView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            mainView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            mainView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
+            mainView.topAnchor.constraint(
+                equalTo: topAnchor
+            ),
+            mainView.leadingAnchor.constraint(
+                equalTo: leadingAnchor
+            ),
+            mainView.trailingAnchor.constraint(
+                equalTo: trailingAnchor
+            ),
+            mainView.bottomAnchor.constraint(
+                equalTo: bottomAnchor,
+                constant: -4
+            ),
             
             contactPhoto.leadingAnchor.constraint(
                 equalTo: mainView.leadingAnchor,
                 constant: 12
             ),
-            contactPhoto.centerYAnchor.constraint(equalTo: mainView.centerYAnchor),
-            contactPhoto.widthAnchor.constraint(equalToConstant: 96),
-            contactPhoto.heightAnchor.constraint(equalTo: contactPhoto.widthAnchor),
+            contactPhoto.centerYAnchor.constraint(
+                equalTo: mainView.centerYAnchor
+            ),
+            contactPhoto.widthAnchor.constraint(
+                equalToConstant: 96
+            ),
+            contactPhoto.heightAnchor.constraint(
+                equalTo: contactPhoto.widthAnchor
+            ),
             
             nameLabel.leadingAnchor.constraint(
                 equalTo: contactPhoto.trailingAnchor,
