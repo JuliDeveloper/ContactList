@@ -208,9 +208,9 @@ final class ContactCell: UITableViewCell {
             phoneLabel.leadingAnchor.constraint(
                 equalTo: nameLabel.leadingAnchor
             ),
-            phoneLabel.topAnchor.constraint(
-                equalTo: nameLabel.bottomAnchor,
-                constant: 6
+            phoneLabel.bottomAnchor.constraint(
+                equalTo: appStackView.topAnchor,
+                constant: -16
             ),
             phoneLabel.trailingAnchor.constraint(
                 equalTo: nameLabel.trailingAnchor
