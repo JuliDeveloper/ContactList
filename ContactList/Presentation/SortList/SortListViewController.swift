@@ -250,6 +250,11 @@ extension SortListViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? SortCell else { return }
+        cell.radioButton.sendActions(for: .touchUpInside)
+    }
 }
 
 extension SortListViewController: RadioButtonDelegate {
