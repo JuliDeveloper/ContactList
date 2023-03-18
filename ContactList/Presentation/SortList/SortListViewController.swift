@@ -167,6 +167,14 @@ final class SortListViewController: UIViewController {
         }
     }
     
+    func updateSaveButtonColor() {
+        if selectedIndexPath != nil {
+            saveButton.backgroundColor = .customBlue
+        } else {
+            saveButton.backgroundColor = .customLightGray
+        }
+    }
+    
     func resetSelectionButton() {
         if let previousSelectedIndexPath = selectedIndexPath,
            let previousSelectedCell = tableView.cellForRow(at: previousSelectedIndexPath) as? SortCell {
@@ -174,6 +182,8 @@ final class SortListViewController: UIViewController {
         }
         
         selectedIndexPath = nil
+        
+        updateSaveButtonColor()
     }
     
     @objc private func cancel() {
@@ -230,5 +240,7 @@ extension SortListViewController: RadioButtonDelegate {
         
         selectedIndexPath = indexPath
         radioButton.isSelected = true
+        
+        updateSaveButtonColor()
     }
 }
