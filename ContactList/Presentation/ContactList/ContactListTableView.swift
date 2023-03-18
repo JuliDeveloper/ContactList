@@ -13,9 +13,12 @@ final class ContactListTableView: UITableViewController {
         navigationController?.navigationBar.backgroundColor = .customBlack
         navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     private func configTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.register(ContactCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.backgroundColor = .customBlack
         tableView.showsVerticalScrollIndicator = false
@@ -29,7 +32,9 @@ extension ContactListTableView {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        CustomHeaderTableView()
+        let header = CustomHeaderTableView()
+        header.delegate = self
+        return header
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -52,11 +57,17 @@ extension ContactListTableView {
         
         return cell
     }
-    
-//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        let separator = UIView(frame: CGRect(x: 0, y: cell.frame.size.height, width: cell.frame.size.width, height: 4))
-//        separator.backgroundColor = .customBlack
-//        cell.addSubview(separator)
-//    }
+}
 
+extension ContactListTableView: CustomHeaderTableViewDelegate {
+    func presentSortTableViewController() {
+        let sortVC = SortListTableViewController()
+        sortVC.modalPresentationStyle = .formSheet
+        self.present(sortVC, animated: true)
+
+    }
+    
+    func presentFilterTableViewController() {
+        
+    }
 }
