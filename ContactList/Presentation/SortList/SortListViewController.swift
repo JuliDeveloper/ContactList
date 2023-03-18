@@ -13,6 +13,14 @@ protocol ContactsSortingDelegate: AnyObject {
 
 final class SortListViewController: UIViewController {
     
+    private let smallView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .customLightGray
+        view.layer.cornerRadius = 2
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .customBlack
@@ -82,9 +90,11 @@ final class SortListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
+        tableView.separatorStyle = .none
     }
     
     private func addElements() {
+        view.addSubview(smallView)
         view.addSubview(tableView)
         view.addSubview(buttonStack)
         
@@ -94,6 +104,20 @@ final class SortListViewController: UIViewController {
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
+            
+            smallView.widthAnchor.constraint(
+                equalToConstant: 50
+            ),
+            smallView.heightAnchor.constraint(
+                equalToConstant: 4
+            ),
+            smallView.topAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10
+            ),
+            smallView.centerXAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.centerXAnchor
+            ),
+            
             tableView.leadingAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.leadingAnchor,
                 constant: 20
