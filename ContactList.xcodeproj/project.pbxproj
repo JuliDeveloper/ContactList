@@ -21,7 +21,7 @@
 		255B08B929C2333100A599E3 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08B829C2333100A599E3 /* SplashScreenPresenter.swift */; };
 		255B08BC29C23F5C00A599E3 /* CustomHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08BB29C23F5C00A599E3 /* CustomHeaderTableView.swift */; };
 		255B08C529C4BEDA00A599E3 /* Extension + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08C429C4BEDA00A599E3 /* Extension + UIImageView.swift */; };
-		255B08C729C4CD1700A599E3 /* SortListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08C629C4CD1700A599E3 /* SortListTableViewController.swift */; };
+		255B08C729C4CD1700A599E3 /* SortListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08C629C4CD1700A599E3 /* SortListViewController.swift */; };
 		255B08CA29C4D40300A599E3 /* SortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08C929C4D40300A599E3 /* SortCell.swift */; };
 		255B08CC29C4D6BF00A599E3 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08CB29C4D6BF00A599E3 /* RadioButton.swift */; };
 		255B08CE29C5EBF700A599E3 /* Extension + UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08CD29C5EBF700A599E3 /* Extension + UIButton.swift */; };
@@ -44,7 +44,7 @@
 		255B08B829C2333100A599E3 /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
 		255B08BB29C23F5C00A599E3 /* CustomHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderTableView.swift; sourceTree = "<group>"; };
 		255B08C429C4BEDA00A599E3 /* Extension + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView.swift"; sourceTree = "<group>"; };
-		255B08C629C4CD1700A599E3 /* SortListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortListTableViewController.swift; sourceTree = "<group>"; };
+		255B08C629C4CD1700A599E3 /* SortListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortListViewController.swift; sourceTree = "<group>"; };
 		255B08C929C4D40300A599E3 /* SortCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCell.swift; sourceTree = "<group>"; };
 		255B08CB29C4D6BF00A599E3 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		255B08CD29C5EBF700A599E3 /* Extension + UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIButton.swift"; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		255B08C829C4D29A00A599E3 /* SortList */ = {
 			isa = PBXGroup;
 			children = (
-				255B08C629C4CD1700A599E3 /* SortListTableViewController.swift */,
+				255B08C629C4CD1700A599E3 /* SortListViewController.swift */,
 			);
 			path = SortList;
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 				255B08A329BE06D700A599E3 /* SplashScreenViewController.swift in Sources */,
 				255B08BC29C23F5C00A599E3 /* CustomHeaderTableView.swift in Sources */,
 				255B08CC29C4D6BF00A599E3 /* RadioButton.swift in Sources */,
-				255B08C729C4CD1700A599E3 /* SortListTableViewController.swift in Sources */,
+				255B08C729C4CD1700A599E3 /* SortListViewController.swift in Sources */,
 				255B089129BE04AB00A599E3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

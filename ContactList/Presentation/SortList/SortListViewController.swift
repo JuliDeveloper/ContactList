@@ -1,4 +1,5 @@
 import UIKit
+import Contacts
 
 private let identifierSortCell = "sortCell"
 
@@ -6,7 +7,11 @@ protocol RadioButtonDelegate: AnyObject {
     func radioButtonSelected(_ radioButton: RadioButton)
 }
 
-final class SortListTableViewController: UIViewController {
+protocol ContactsSortingDelegate: AnyObject {
+    func didSortContacts(sortedContacts: [CNContact])
+}
+
+final class SortListViewController: UIViewController {
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -60,6 +65,9 @@ final class SortListTableViewController: UIViewController {
     ]
     
     private var selectedIndexPath: IndexPath?
+    
+    weak var delegate: ContactsSortingDelegate?
+    var contacts: [CNContact] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,6 +125,48 @@ final class SortListTableViewController: UIViewController {
         ])
     }
     
+    private func sortData() {
+        if let indexPath = selectedIndexPath {
+            switch indexPath.row {
+            case 0 :
+                contacts.sort { contact1, contact2 in
+                     contact1
+                        .givenName
+                        .localizedCaseInsensitiveCompare(
+                            contact2.givenName
+                        ) == .orderedAscending
+                }
+            case 1:
+                contacts.sort { contact1, contact2 in
+                    contact2
+                        .givenName
+                        .localizedCaseInsensitiveCompare(
+                            contact1.givenName
+                        ) == .orderedAscending
+                }
+            case 2:
+                contacts.sort { contact1, contact2 in
+                     contact1
+                        .familyName
+                        .localizedCaseInsensitiveCompare(
+                            contact2.familyName
+                        ) == .orderedAscending
+                }
+            case 3:
+                contacts.sort { contact1, contact2 in
+                    contact2
+                        .familyName
+                        .localizedCaseInsensitiveCompare(
+                            contact1.familyName
+                        ) == .orderedAscending
+                }
+            default:
+                break
+            }
+            delegate?.didSortContacts(sortedContacts: contacts)
+        }
+    }
+    
     func resetSelectionButton() {
         if let previousSelectedIndexPath = selectedIndexPath,
            let previousSelectedCell = tableView.cellForRow(at: previousSelectedIndexPath) as? SortCell {
@@ -131,11 +181,12 @@ final class SortListTableViewController: UIViewController {
     }
     
     @objc private func save() {
+        sortData()
         dismiss(animated: true)
     }
 }
 
-extension SortListTableViewController: UITableViewDelegate, UITableViewDataSource {
+extension SortListViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
@@ -167,7 +218,7 @@ extension SortListTableViewController: UITableViewDelegate, UITableViewDataSourc
     }
 }
 
-extension SortListTableViewController: RadioButtonDelegate {
+extension SortListViewController: RadioButtonDelegate {
     func radioButtonSelected(_ radioButton: RadioButton) {
         guard
             let indexPath = tableView.indexPath(for: radioButton.superview?.superview as? SortCell ?? UITableViewCell() )

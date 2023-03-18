@@ -61,7 +61,9 @@ extension ContactListTableView {
 
 extension ContactListTableView: CustomHeaderTableViewDelegate {
     func presentSortTableViewController() {
-        let sortVC = SortListTableViewController()
+        let sortVC = SortListViewController()
+        sortVC.contacts = self.contacts
+        sortVC.delegate = self
         sortVC.modalPresentationStyle = .formSheet
         self.present(sortVC, animated: true)
 
@@ -69,5 +71,12 @@ extension ContactListTableView: CustomHeaderTableViewDelegate {
     
     func presentFilterTableViewController() {
         
+    }
+}
+
+extension ContactListTableView: ContactsSortingDelegate {
+    func didSortContacts(sortedContacts: [CNContact]) {
+        self.contacts = sortedContacts
+        tableView.reloadData()
     }
 }
