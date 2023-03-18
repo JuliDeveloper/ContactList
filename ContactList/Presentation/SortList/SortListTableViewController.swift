@@ -2,8 +2,8 @@ import UIKit
 
 private let identifierSortCell = "sortCell"
 
-protocol SortListTableViewControllerDelegate: AnyObject {
-    func switchButton()
+protocol RadioButtonDelegate: AnyObject {
+    func radioButtonSelected(_ radioButton: RadioButton)
 }
 
 final class SortListTableViewController: UIViewController {
@@ -32,7 +32,7 @@ final class SortListTableViewController: UIViewController {
         )
         button.addTarget(
             self,
-            action: #selector(close),
+            action: #selector(cancel),
             for: .touchUpInside
         )
         return button
@@ -44,7 +44,11 @@ final class SortListTableViewController: UIViewController {
             title: "Применить",
             backgroundColor: .customLightGray
         )
-        button.addTarget(self, action: #selector(save), for: .touchUpInside)
+        button.addTarget(
+            self,
+            action: #selector(save),
+            for: .touchUpInside
+        )
         return button
     }()
     
@@ -55,6 +59,8 @@ final class SortListTableViewController: UIViewController {
         "По фамилии (Я-А / Z-A)"
     ]
     
+    private var selectedIndexPath: IndexPath?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .customBlack
@@ -111,7 +117,7 @@ final class SortListTableViewController: UIViewController {
         ])
     }
     
-    @objc private func close() {
+    @objc private func cancel() {
         dismiss(animated: true)
     }
     
@@ -142,14 +148,27 @@ extension SortListTableViewController: UITableViewDelegate, UITableViewDataSourc
         }
         
         let title = titleList[indexPath.row]
-        cell.configCell(for: cell, title: title, delegate: self)
+
+        cell.configCell(for: cell, title: title)
+        cell.radioButton.delegate = self
+        cell.radioButton.isSelected = indexPath == selectedIndexPath
+
         
         return cell
     }
 }
 
-extension SortListTableViewController: SortListTableViewControllerDelegate {
-    func switchButton() {
-        saveButton.backgroundColor = .customBlue
+extension SortListTableViewController: RadioButtonDelegate {
+    func radioButtonSelected(_ radioButton: RadioButton) {
+        guard
+            let indexPath = tableView.indexPath(for: radioButton.superview?.superview as? SortCell ?? UITableViewCell() )
+        else { return }
+        
+        if let previousSelectedIndexPath = selectedIndexPath, let previousSelectedCell = tableView.cellForRow(at: previousSelectedIndexPath) as? SortCell {
+            previousSelectedCell.radioButton.isSelected = false
+        }
+        
+        selectedIndexPath = indexPath
+        radioButton.isSelected = true
     }
 }

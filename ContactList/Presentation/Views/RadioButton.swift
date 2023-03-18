@@ -1,12 +1,7 @@
 import UIKit
 
 class RadioButton: UIButton {
-//    override var isSelected: Bool {
-//        didSet {
-//            setNeedsDisplay()
-//        }
-//    }
-    var delegate: SortListTableViewControllerDelegate?
+    weak var delegate: RadioButtonDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,17 +14,24 @@ class RadioButton: UIButton {
     }
 
     private func setup() {
-        backgroundColor = .clear
+        isSelected = false
         tintColor = .customLightGray
+        showsTouchWhenHighlighted = false
         setImage(UIImage(named: "radioButton"), for: .normal)
-        self.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        self.addTarget(
+            self,
+            action: #selector(buttonTapped),
+            for: .touchUpInside
+        )
     }
 
     @objc private func buttonTapped() {
-        //isSelected.toggle()
-        backgroundColor = .clear
+        isSelected.toggle()
         tintColor = .customBlue
-        setImage(UIImage(named: "selectedRadioButton"), for: .normal)
-        delegate?.switchButton()
+        setImage(UIImage(
+            named: "selectedRadioButton"),
+                 for: .selected
+        )
+        delegate?.radioButtonSelected(self)
     }
 }

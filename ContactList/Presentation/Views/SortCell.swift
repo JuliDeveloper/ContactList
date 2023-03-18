@@ -18,17 +18,16 @@ final class SortCell: UITableViewCell {
         return label
     }()
     
-    private let radioButton: RadioButton = {
-        let button = RadioButton(type: .system)
+    let radioButton: RadioButton = {
+        let button = RadioButton(type: .custom)
         button.frame = CGRect(x: 0, y: 0, width: 22, height: 22)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    func configCell(for cell: SortCell, title: String, delegate: SortListTableViewControllerDelegate) {
+    func configCell(for cell: SortCell, title: String) {
         backgroundColor = .clear
         titleLabel.text = title
-        radioButton.delegate = delegate
         selectionStyle = .none
         addElements()
         configConstraints()
