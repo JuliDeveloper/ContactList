@@ -13,8 +13,6 @@
 		255B089B29BE04AC00A599E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255B089929BE04AC00A599E3 /* LaunchScreen.storyboard */; };
 		255B08A329BE06D700A599E3 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08A229BE06D700A599E3 /* SplashScreenViewController.swift */; };
 		255B08A529BE113C00A599E3 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08A429BE113C00A599E3 /* Extension + UIColor.swift */; };
-		255B08A729BE3A4500A599E3 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08A629BE3A4500A599E3 /* Extension + UIView.swift */; };
-		255B08A929BE3A6100A599E3 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08A829BE3A6100A599E3 /* CustomAlert.swift */; };
 		255B08AB29BE445E00A599E3 /* ContactListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08AA29BE445E00A599E3 /* ContactListTableView.swift */; };
 		255B08AD29C21E4800A599E3 /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08AC29C21E4800A599E3 /* ContactsManager.swift */; };
 		255B08AF29C2212A00A599E3 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08AE29C2212A00A599E3 /* ContactCell.swift */; };
@@ -25,6 +23,7 @@
 		255B08CA29C4D40300A599E3 /* SortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08C929C4D40300A599E3 /* SortCell.swift */; };
 		255B08CC29C4D6BF00A599E3 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08CB29C4D6BF00A599E3 /* RadioButton.swift */; };
 		255B08CE29C5EBF700A599E3 /* Extension + UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08CD29C5EBF700A599E3 /* Extension + UIButton.swift */; };
+		255B08D429C64EE200A599E3 /* SortList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08D329C64EE200A599E3 /* SortList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +35,6 @@
 		255B089C29BE04AC00A599E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		255B08A229BE06D700A599E3 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		255B08A429BE113C00A599E3 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
-		255B08A629BE3A4500A599E3 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
-		255B08A829BE3A6100A599E3 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		255B08AA29BE445E00A599E3 /* ContactListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTableView.swift; sourceTree = "<group>"; };
 		255B08AC29C21E4800A599E3 /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
 		255B08AE29C2212A00A599E3 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
@@ -48,6 +45,7 @@
 		255B08C929C4D40300A599E3 /* SortCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCell.swift; sourceTree = "<group>"; };
 		255B08CB29C4D6BF00A599E3 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		255B08CD29C5EBF700A599E3 /* Extension + UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIButton.swift"; sourceTree = "<group>"; };
+		255B08D329C64EE200A599E3 /* SortList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				255B08A429BE113C00A599E3 /* Extension + UIColor.swift */,
-				255B08A629BE3A4500A599E3 /* Extension + UIView.swift */,
 				255B08C429C4BEDA00A599E3 /* Extension + UIImageView.swift */,
 				255B08CD29C5EBF700A599E3 /* Extension + UIButton.swift */,
 			);
@@ -158,7 +155,6 @@
 		255B08B729C2323A00A599E3 /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
-				255B08A829BE3A6100A599E3 /* CustomAlert.swift */,
 				255B089729BE04AC00A599E3 /* Assets.xcassets */,
 			);
 			path = Resourses;
@@ -179,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				255B08C629C4CD1700A599E3 /* SortListViewController.swift */,
+				255B08D329C64EE200A599E3 /* SortList.swift */,
 			);
 			path = SortList;
 			sourceTree = "<group>";
@@ -256,13 +253,12 @@
 				255B08AF29C2212A00A599E3 /* ContactCell.swift in Sources */,
 				255B08C529C4BEDA00A599E3 /* Extension + UIImageView.swift in Sources */,
 				255B088F29BE04AB00A599E3 /* AppDelegate.swift in Sources */,
-				255B08A729BE3A4500A599E3 /* Extension + UIView.swift in Sources */,
 				255B08AD29C21E4800A599E3 /* ContactsManager.swift in Sources */,
 				255B08A529BE113C00A599E3 /* Extension + UIColor.swift in Sources */,
 				255B08B929C2333100A599E3 /* SplashScreenPresenter.swift in Sources */,
 				255B08CE29C5EBF700A599E3 /* Extension + UIButton.swift in Sources */,
 				255B08CA29C4D40300A599E3 /* SortCell.swift in Sources */,
-				255B08A929BE3A6100A599E3 /* CustomAlert.swift in Sources */,
+				255B08D429C64EE200A599E3 /* SortList.swift in Sources */,
 				255B08AB29BE445E00A599E3 /* ContactListTableView.swift in Sources */,
 				255B08A329BE06D700A599E3 /* SplashScreenViewController.swift in Sources */,
 				255B08BC29C23F5C00A599E3 /* CustomHeaderTableView.swift in Sources */,

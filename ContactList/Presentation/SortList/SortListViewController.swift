@@ -152,7 +152,7 @@ final class SortListViewController: UIViewController {
     private func sortData() {
         if let indexPath = selectedIndexPath {
             switch indexPath.row {
-            case 0 :
+            case SortList.sortNameAZ.rawValue:
                 contacts.sort { contact1, contact2 in
                      contact1
                         .givenName
@@ -160,7 +160,7 @@ final class SortListViewController: UIViewController {
                             contact2.givenName
                         ) == .orderedAscending
                 }
-            case 1:
+            case SortList.sortNameZA.rawValue:
                 contacts.sort { contact1, contact2 in
                     contact2
                         .givenName
@@ -168,7 +168,7 @@ final class SortListViewController: UIViewController {
                             contact1.givenName
                         ) == .orderedAscending
                 }
-            case 2:
+            case SortList.sortLastNameAZ.rawValue:
                 contacts.sort { contact1, contact2 in
                      contact1
                         .familyName
@@ -176,7 +176,7 @@ final class SortListViewController: UIViewController {
                             contact2.familyName
                         ) == .orderedAscending
                 }
-            case 3:
+            case SortList.sortLastNameZA.rawValue:
                 contacts.sort { contact1, contact2 in
                     contact2
                         .familyName
@@ -246,7 +246,6 @@ extension SortListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configCell(for: cell, title: title)
         cell.radioButton.delegate = self
         cell.radioButton.isSelected = indexPath == selectedIndexPath
-
         
         return cell
     }
@@ -269,7 +268,6 @@ extension SortListViewController: RadioButtonDelegate {
         
         selectedIndexPath = indexPath
         radioButton.isSelected = true
-        
         updateSaveButtonColor()
     }
 }
