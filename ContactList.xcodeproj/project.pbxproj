@@ -21,6 +21,10 @@
 		255B08B929C2333100A599E3 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08B829C2333100A599E3 /* SplashScreenPresenter.swift */; };
 		255B08BC29C23F5C00A599E3 /* CustomHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08BB29C23F5C00A599E3 /* CustomHeaderTableView.swift */; };
 		255B08C529C4BEDA00A599E3 /* Extension + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08C429C4BEDA00A599E3 /* Extension + UIImageView.swift */; };
+		255B08C729C4CD1700A599E3 /* SortListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08C629C4CD1700A599E3 /* SortListTableViewController.swift */; };
+		255B08CA29C4D40300A599E3 /* SortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08C929C4D40300A599E3 /* SortCell.swift */; };
+		255B08CC29C4D6BF00A599E3 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08CB29C4D6BF00A599E3 /* RadioButton.swift */; };
+		255B08CE29C5EBF700A599E3 /* Extension + UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B08CD29C5EBF700A599E3 /* Extension + UIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		255B08B829C2333100A599E3 /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
 		255B08BB29C23F5C00A599E3 /* CustomHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderTableView.swift; sourceTree = "<group>"; };
 		255B08C429C4BEDA00A599E3 /* Extension + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView.swift"; sourceTree = "<group>"; };
+		255B08C629C4CD1700A599E3 /* SortListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortListTableViewController.swift; sourceTree = "<group>"; };
+		255B08C929C4D40300A599E3 /* SortCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCell.swift; sourceTree = "<group>"; };
+		255B08CB29C4D6BF00A599E3 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		255B08CD29C5EBF700A599E3 /* Extension + UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIButton.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,7 @@
 				255B08C129C49E8200A599E3 /* Views */,
 				255B08B229C231AF00A599E3 /* SplashCreen */,
 				255B08B329C231BA00A599E3 /* ContactList */,
+				255B08C829C4D29A00A599E3 /* SortList */,
 				255B08B429C231CC00A599E3 /* LaunchScreen */,
 			);
 			path = Presentation;
@@ -115,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				255B08AA29BE445E00A599E3 /* ContactListTableView.swift */,
-				255B08BB29C23F5C00A599E3 /* CustomHeaderTableView.swift */,
 			);
 			path = ContactList;
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 				255B08A429BE113C00A599E3 /* Extension + UIColor.swift */,
 				255B08A629BE3A4500A599E3 /* Extension + UIView.swift */,
 				255B08C429C4BEDA00A599E3 /* Extension + UIImageView.swift */,
+				255B08CD29C5EBF700A599E3 /* Extension + UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,9 +167,20 @@
 		255B08C129C49E8200A599E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				255B08BB29C23F5C00A599E3 /* CustomHeaderTableView.swift */,
 				255B08AE29C2212A00A599E3 /* ContactCell.swift */,
+				255B08C929C4D40300A599E3 /* SortCell.swift */,
+				255B08CB29C4D6BF00A599E3 /* RadioButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		255B08C829C4D29A00A599E3 /* SortList */ = {
+			isa = PBXGroup;
+			children = (
+				255B08C629C4CD1700A599E3 /* SortListTableViewController.swift */,
+			);
+			path = SortList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,10 +260,14 @@
 				255B08AD29C21E4800A599E3 /* ContactsManager.swift in Sources */,
 				255B08A529BE113C00A599E3 /* Extension + UIColor.swift in Sources */,
 				255B08B929C2333100A599E3 /* SplashScreenPresenter.swift in Sources */,
+				255B08CE29C5EBF700A599E3 /* Extension + UIButton.swift in Sources */,
+				255B08CA29C4D40300A599E3 /* SortCell.swift in Sources */,
 				255B08A929BE3A6100A599E3 /* CustomAlert.swift in Sources */,
 				255B08AB29BE445E00A599E3 /* ContactListTableView.swift in Sources */,
 				255B08A329BE06D700A599E3 /* SplashScreenViewController.swift in Sources */,
 				255B08BC29C23F5C00A599E3 /* CustomHeaderTableView.swift in Sources */,
+				255B08CC29C4D6BF00A599E3 /* RadioButton.swift in Sources */,
+				255B08C729C4CD1700A599E3 /* SortListTableViewController.swift in Sources */,
 				255B089129BE04AB00A599E3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
