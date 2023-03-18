@@ -117,8 +117,17 @@ final class SortListTableViewController: UIViewController {
         ])
     }
     
+    func resetSelectionButton() {
+        if let previousSelectedIndexPath = selectedIndexPath,
+           let previousSelectedCell = tableView.cellForRow(at: previousSelectedIndexPath) as? SortCell {
+            previousSelectedCell.radioButton.isSelected = false
+        }
+        
+        selectedIndexPath = nil
+    }
+    
     @objc private func cancel() {
-        dismiss(animated: true)
+        resetSelectionButton()
     }
     
     @objc private func save() {
